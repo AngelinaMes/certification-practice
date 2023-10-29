@@ -1,0 +1,1145 @@
+ГРУППА ЧИСЕЛ!!!
+Задача 1
+Напишите и экспортируйте функцию calculateDistance(), которая находит расстояние между двумя точками на числовой оси с заданными координатами x1 и x2.
+
+Параметры:
+
+x1: координата первой точки.
+x2: координата второй точки.
+
+function calculateDistance(x1 ,x2) {
+    return x2 - x1;
+};
+
+console.log(calculateDistance(0, 5));
+
+
+
+Задача 2
+Даны три точки A, B, C на числовой оси. Точка C расположена между точками A и B. Напишите и экспортируйте функцию calculateSegmentProduct(), которая находит произведение длин отрезков AC и BC.
+
+Параметры:
+
+A: координата точки A.
+B: координата точки B.
+C: координата точки C.
+
+function calculateSegmentProduct(A, B, C) {
+  // Вычисляем длины отрезков AC и BC
+  const lengthAC = Math.abs(C - A);
+  const lengthBC = Math.abs(B - C);
+
+  // Находим произведение длин отрезков AC и BC
+  const product = lengthAC * lengthBC;
+
+  return product;
+}
+
+
+
+Задача 3
+Дан размер файла в байтах. Напишите и экспортируйте функцию calculateKilobytes(), которая, используя операцию деления нацело, находит количество полных килобайтов, которые занимает данный файл (1 килобайт = 1024 байта).
+
+Параметры:
+
+fileSizeInBytes: размер файла в байтах.
+
+function calculateKilobytes(fileSizeInBytes) {
+  const kilobytes = Math.floor(fileSizeInBytes / 1024);
+  return kilobytes;
+}
+
+
+
+Задача 4
+Даны целые положительные числа A и B (A > B). Напишите и экспортируйте функцию calculateSegments(), которая, используя операцию деления, находит количество отрезков B, размещенных на отрезке A.
+
+Параметры:
+
+lengthA: длина отрезка A.
+lengthB: длина отрезка B.
+
+function calculateSegments(lengthA, lengthB) {
+  if (lengthA < lengthB) {
+    throw new Error('Длина отрезка A должна быть больше длины отрезка B.');
+  }
+  
+  const segments = Math.floor(lengthA / lengthB);
+  return segments;
+}
+
+
+
+Задача 5
+Дано двузначное число. Напишите и экспортируйте функцию calculateDigitSum(), которая находит сумму цифр данного двузначного числа.
+
+Параметры:
+
+twoDigitNumber: двузначное число.
+
+function calculateDigitSum(twoDigitNumber) {
+  if (twoDigitNumber < 10 || twoDigitNumber > 99) {
+    throw new Error('Введите двузначное число.');
+  }
+const tensDigit = Math.floor(twoDigitNumber / 10); // Получаем первую цифру
+  const onesDigit = twoDigitNumber % 10; // Получаем вторую цифру
+  const sum = tensDigit + onesDigit;
+
+  return sum;
+}
+
+
+
+Задача 6
+Дано трехзначное число. Напишите и экспортируйте функцию swapHundredsAndTens(), которая возвращает число, полученное при перестановке цифр сотен и десятков исходного числа.
+
+Параметры:
+
+twoDigitNumber: двузначное число.
+
+function swapHundredsAndTens(threeDigitNumber) {
+  if (threeDigitNumber < 100 || threeDigitNumber > 999) {
+    throw new Error('Введите трехзначное число.');
+  }
+
+  const hundreds = Math.floor(threeDigitNumber / 100); // Получаем цифру сотен
+  const tens = Math.floor((threeDigitNumber % 100) / 10); // Получаем цифру десятков
+  const ones = threeDigitNumber % 10; // Получаем цифру единиц
+
+  // Меняем местами цифры сотен и десятков
+  const swappedNumber = tens * 100 + hundreds * 10 + ones;
+
+  return swappedNumber;
+}
+
+
+
+Задача 7
+Дано целое число, большее 999. Напишите и экспортируйте функцию getHundredsDigit(), которая, используя одну операцию деления нацело и одну операцию взятия остатка от деления, находит цифру, соответствующую разряду сотен в записи этого числа. Если число не соответствует условию, функция возвращает 0.
+
+Параметры:
+
+number: целое число, большее 999.
+
+function getHundredsDigit(number) {
+  if (number <= 999) {
+    return 0; // Возвращаем 0, если число не соответствует условию
+  }
+
+  const hundredsDigit = Math.floor((number / 100) % 10);
+  return hundredsDigit;
+}
+
+
+
+Задача 8
+С начала суток прошло N секунд. Напишите и экспортируйте функцию getFullHours(), которая находит количество полных часов, прошедших с начала суток.
+
+Параметры:
+
+seconds: целое число секунд.
+
+function getFullHours(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  return hours;
+}
+
+
+Задача 9
+Дни недели пронумерованы следующим образом: 0 — воскресенье, 1 — понедельник, 2 — вторник, ..., 6 — суббота. Дано целое число K, лежащее в диапазоне 1–365. Напишите и экспортируйте функцию getDayOfWeek(), которая определяет номер дня недели для K-го дня года, если известно, что в этом году 1 января (первый день) было понедельником.
+
+Параметры:
+
+dayOfYear: целое число от 1 до 365.
+
+function getDayOfWeek(dayOfYear) {
+  if (dayOfYear < 1 || dayOfYear > 365) {
+    throw new Error('День года должен быть в диапазоне от 1 до 365');
+  }
+
+  const dayOfWeek = (dayOfYear - 1 + 1) % 7; // +1 для учета начала с понедельника
+  return dayOfWeek;
+}
+
+
+
+Задача 10
+Даны целые положительные числа A, B, C. Напишите и экспортируйте функцию countSquares(), которая на прямоугольнике размера A × B размещает максимально возможное количество квадратов со стороной C (без наложений) и возвращает их количество.
+
+Параметры:
+
+A: целое положительное число (ширина прямоугольника).
+B: целое положительное число (длина прямоугольника).
+C: целое положительное число (сторона квадрата).
+
+function countSquares(A, B, C) {
+  if (A <= 0 || B <= 0 || C <= 0) {
+    throw new Error('Все числа должны быть положительными.');
+  }
+  
+  const maxHorizontalSquares = Math.floor(A / C);
+  const maxVerticalSquares = Math.floor(B / C);
+  
+  return maxHorizontalSquares * maxVerticalSquares;
+}
+
+
+
+ГРУППА СИМВОЛЫ И СТРОКИ!!!
+Задача 1
+Дана строка. Напиши и экспортируй функцию countUppercaseLetters(), которая подсчитывает количество прописных латинских букв в данной строке.
+
+Параметры:
+
+str: строка, в которой нужно подсчитать прописные латинские буквы.
+
+function countUppercaseLetters(str) {
+  const uppercaseLetters = str.match(/[A-Z]/g) || [];
+  return uppercaseLetters.length;
+}
+
+
+
+Задача 2
+Даны целые положительные числа N1 и N2 и строки S1 и S2. Напишите и экспортируйте функцию combineStrings(), которая создает новую строку, содержащую первые N1 символов строки S1 и последние N2 символов строки S2 (в указанном порядке).
+
+Параметры:
+
+N1: количество символов, которые нужно взять из начала строки S1.
+N2: количество символов, которые нужно взять из конца строки S2.
+S1: первая строка.
+S2: вторая строка.
+
+function countUppercaseLetters(str) {
+  const uppercaseLetters = str.match(/[A-Z]/g) || [];
+  return uppercaseLetters.length;
+}
+
+
+
+Задача 3
+Даны строки S и S0. Напиши функцию containsSubstring(), которая проверяет, содержится ли строка S0 в строке S. Если содержится, то функция возвращает true, если не содержится, то false.
+
+Параметры:
+
+S: основная строка.
+S0: подстрока, которую нужно проверить на наличие в основной строке.
+
+function containsSubstring(S, S0) {
+  return S.includes(S0);
+}
+
+
+
+Задача 4
+Даны строки S, S1 и S2. Напиши функцию replaceSubstring(), которая заменяет в строке S первое вхождение строки S1 на строку S2.
+
+Параметры:
+
+S: основная строка.
+S1: подстрока, которую нужно заменить.
+S2: строка, которой нужно заменить первое вхождение S1.
+
+function replaceSubstring(S, S1, S2) {
+  return S.replace(S1, S2);
+}
+
+
+
+Задача 5
+Дана строка, состоящая из английских слов, разделенных пробелами. Напиши функцию countWordsWithSameLetters(), которая находит количество слов, начинающихся и заканчивающихся одной и той же буквой.
+
+Параметры:
+
+sentence: строка с английскими словами, разделенными пробелами.
+
+function countWordsWithSameLetters(sentence) {
+  const words = sentence.split(' '); // Разбиваем строку на слова
+  let count = 0;
+
+  for (const word of words) {
+    const firstLetter = word[0].toLowerCase();
+    const lastLetter = word[word.length - 1].toLowerCase();
+
+    if (firstLetter === lastLetter) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+
+
+Задача 6
+Дана строка, состоящая из слов. Напиши функцию countWordsWithA(), которая находит количество слов, содержащих хотя бы одну букву «A».
+
+Параметры:
+
+sentence: строка, состоящая из слов.
+
+  let count = 0;
+
+  for (const word of words) {
+    if (word.toLowerCase().includes('a')) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+
+
+Задача 7
+Дана строка-предложение с избыточными пробелами между словами. Напиши функцию normalizeSpaces(), которая преобразует строку так, чтобы между словами был ровно один пробел.
+
+Параметры:
+
+sentence: строка-предложение с избыточными пробелами.
+
+function normalizeSpaces(sentence) {
+  return sentence.replace(/\s+/g, ' ').trim();
+}
+
+
+
+Задача 8
+Дана строка, содержащая полное имя файла, то есть имя диска, список каталогов (путь), собственно имя и расширение. Напиши функцию extractFileName(), которая выделяет из этой строки имя файла (без расширения).
+
+Параметры:
+
+fullFileName: полное имя файла.
+
+function extractFileName(fullFileName) {
+  const parts = fullFileName.split('.');
+  if (parts.length > 1) {
+    // Если есть расширение, возвращаем имя файла без последней части (расширения)
+    parts.pop();
+  }
+  const fileName = parts.join('.');
+  return fileName;
+}
+
+
+
+Задача 9
+Дана строка-предложение. Напиши функцию encryptSentence(), которая зашифровывает ее, помещая в начало все символы, расположенные на четных позициях строки, а затем, в обратном порядке, все символы, расположенные на нечетных позициях.
+
+Параметры:
+
+sentence: исходная строка-предложение.
+
+function encryptSentence(sentence) {
+  let evenChars = '';
+  let oddChars = '';
+
+  for (let i = 0; i < sentence.length; i++) {
+    if (i % 2 === 0) {
+      evenChars += sentence[i];
+    } else {
+      oddChars = sentence[i] + oddChars;
+    }
+  }
+
+  const encryptedSentence = evenChars + oddChars;
+  return encryptedSentence;
+}
+
+
+
+Задача 10
+Дана строка, содержащая латинские буквы и круглые скобки. Напиши функцию checkBrackets(), которая проверяет правильность расстановки скобок в строке.
+
+Возвращаемое значение:
+
+Если скобки расставлены правильно, вернуть число 0. В противном случае вернуть:
+
+Номер позиции первой ошибочной закрывающей скобки, если есть лишняя закрывающая скобка.
+-1, если закрывающих скобок не хватает.
+Параметры:
+
+expression: строка с латинскими буквами и круглыми скобками.
+
+function checkBrackets(expression) {
+  const stack = [];
+  
+  for (let i = 0; i < expression.length; i++) {
+    const char = expression[i];
+    
+    if (char === '(') {
+      stack.push(i);
+    } else if (char === ')') {
+      if (stack.length === 0) {
+        return i; // Лишняя закрывающая скобка
+      }
+      stack.pop();
+    }
+  }
+
+  if (stack.length === 0) {
+    return 0; // Все скобки правильно расставлены
+  } else {
+    return stack.pop(); // Не хватает закрывающей скобки
+  }
+}
+
+
+
+
+ГРУППА ЛОГИЧЕСКИХ ТИП ДАННЫХ!!!
+Задача 1
+Дано целое число A. Напиши функцию isPositive(), которая проверяет истинность высказывания: «Число A является положительным».
+
+Параметры:
+
+A: целое число.
+
+function isPositive(A) {
+  return A > 0;
+}
+
+
+
+Задача 2
+Дано целое число A. Напиши функцию isOdd(), которая проверяет истинность высказывания: «Число A является нечетным».
+
+Параметры:
+
+A: целое число.
+
+function isOdd(A) {
+  return A % 2 !== 0;
+}
+
+
+
+Задача 3
+Даны два целых числа: A и B. Напиши функцию checkInequality(), которая проверяет истинность высказывания: «Справедливы неравенства A > 2 и B ≤ 3».
+
+Параметры:
+
+A: целое число.
+B: целое число.
+
+function checkInequality(A, B) {
+  return A > 2 && B <= 3;
+}
+
+
+
+Задача 4
+Даны два целых числа: A и B. Напиши функцию checkInequality2(), которая проверяет истинность высказывания: «Справедливы неравенства A ≥ 0 или B < –2».
+
+Параметры:
+
+A: целое число.
+B: целое число.
+
+function checkInequality2(A, B) {
+  return A >= 0 || B < -2;
+}
+
+
+
+Задача 5
+Даны три целых числа: A, B, C. Напиши функцию checkBetweenNumbers(), которая проверяет истинность высказывания: «Значение числа B находится между числами A и C».
+
+Параметры:
+
+A: целое число.
+B: целое число.
+C: целое число.
+
+function checkBetweenNumbers(A, B, C) {
+  return A < B && B < C;
+}
+
+
+
+Задача 6
+Дано целое число. Напиши функцию checkOddThreeDigitNumber(), которая проверяет истинность высказывания: «Данное число является нечетным трехзначным».
+
+Параметры:
+
+number: целое число.
+
+function checkOddThreeDigitNumber(number) {
+  return number % 2 !== 0 && number >= 100 && number <= 999;
+}
+
+
+
+Задача 7
+Дано трехзначное число. Напиши функцию checkUniqueDigits(), которая проверяет истинность высказывания: «Все цифры данного числа различны».
+
+Параметры:
+
+number: целое число.
+
+function checkUniqueDigits(number) {
+  const strNumber = number.toString();
+  return strNumber[0] !== strNumber[1] && strNumber[0] !== strNumber[2] && strNumber[1] !== strNumber[2];
+}
+
+
+
+Задача 8
+Даны числа x и y. Напиши функцию isSecondQuadrant(), которая проверяет истинность высказывания: «Точка с координатами (x, y) лежит во второй координатной четверти». 
+
+function isSecondQuadrant(x, y) {
+  return x < 0 && y > 0;
+}
+
+
+Даны целые числа a, b, c, являющиеся сторонами некоторого треугольника. Напиши функцию isIsoscelesTriangle(), которая проверяет истинность высказывания: «Треугольник со сторонами a, b, c является равнобедренным».
+Параметры:
+
+a: длина первой стороны треугольника.
+b: длина второй стороны треугольника.
+c: длина третьей стороны треугольника.
+
+function isIsoscelesTriangle(a, b, c) {
+  return a === b || a === c || b === c;
+}
+
+
+
+Задача 10
+Даны координаты двух различных полей шахматной доски x1, y1, x2, y2 (целые числа, лежащие в диапазоне 1–8,нумерация начинается с левого верхнего угла доски). Напиши функцию areSameColorFields(), которая проверяет истинность высказывания: «Данные поля имеют одинаковый цвет».
+
+Параметры:
+
+x1: горизонтальная координата первого поля.
+y1: вертикальная координата первого поля.
+x2: горизонтальная координата второго поля.
+y2: вертикальная координата второго поля.
+
+function areSameColorFields(x1, y1, x2, y2) {
+  const sum1 = x1 + y1;
+  const sum2 = x2 + y2;
+  const diff1 = x1 - y1;
+  const diff2 = x2 - y2;
+
+  return sum1 % 2 === sum2 % 2 && diff1 % 2 === diff2 % 2;
+}
+
+
+
+ГРУППА УСЛОВНЫЙ ОПЕРАТОР!!!
+Задача 1
+Дано целое число. Если оно является положительным, то прибавь к нему 1; в противном случае не изменяй его. Напиши функцию incrementIfPositive(), которая принимает целое число и возвращает полученное число.
+
+Параметры:
+
+number: целое число.
+
+function incrementIfPositive(number) {
+  if (number > 0) {
+    return number + 1;
+  } else {
+    return number;
+  }
+}
+
+
+
+Задача 2
+Даны два числа. Вывести порядковый номер меньшего из них. Напиши функцию getIndexOfSmallerNumber(), которая принимает два числа и возвращает порядковый номер меньшего числа.
+
+Параметры:
+
+number1: первое число.
+number2: второе число.
+
+function getIndexOfSmallerNumber(number1, number2) {
+  if (number1 < number2) {
+    return 1;
+  } else if (number2 < number1) {
+    return 2;
+  } else {
+    return 0; // Если числа равны, возвращаем 0 или любой другой индикатор, который вам удобен.
+  }
+}
+
+
+
+Задача 3
+Даны три числа. Найти среднее из них (то есть число, расположенное между наименьшим и наибольшим). Напиши функцию findMiddleNumber(), которая принимает три числа и возвращает среднее из них.
+
+Параметры:
+
+number1: первое число.
+number2: второе число.
+number3: третье число.
+
+function findMiddleNumber(number1, number2, number3) {
+  if (number1 <= number2 && number1 <= number3) {
+    return number2 <= number3 ? number2 : number3;
+  } else if (number2 <= number1 && number2 <= number3) {
+    return number1 <= number3 ? number1 : number3;
+  } else {
+    return number1 <= number2 ? number1 : number2;
+  }
+}
+
+
+
+Задача 4
+Даны четыре целых числа, одно из которых отлично от трех других, равных между собой. Напиши функцию findUniqueNumber(), которая принимает четыре числа и возвращает порядковый номер числа, отличного от остальных.
+
+Параметры:
+
+number1: первое число.
+number2: второе число.
+number3: третье число.
+number4: четвертое число.
+
+function findUniqueNumber(number1, number2, number3, number4) {
+  if (number1 === number2) {
+    if (number2 === number3) {
+      return 4; // number4 отличное число
+    } else {
+      return 3; // number3 отличное число
+    }
+  } else if (number1 === number3) {
+    return 2; // number2 отличное число
+  } else {
+    return 1; // number1 отличное число
+  }
+}
+
+
+
+Задача 5
+Для данного вещественного числа x напиши функцию calculateF(), которая находит значение следующей функции f, принимающей значения целого типа:
+
+Если ( x < 0 ), то ( f(x) = 0 ).
+Если ( x \in [0,1), [2,3), \ldots ), то ( f(x) = 1 ).
+Если ( x \in [1,2), [3,4), \ldots ), то ( f(x) = -1 ).
+Параметры:
+
+x: вещественное число.
+
+function calculateF(x) {
+  if (x < 0) {
+    return 0;
+  } else if (Math.floor(x) % 2 === 0) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+
+
+
+Задача 6
+Для данного целого числа n, находящегося в диапазоне 1–999, напиши функцию describeNumber(), которая выводит строку-описание числа вида:
+
+"четное двузначное число" для четных двузначных чисел,
+"нечетное двузначное число" для нечетных двузначных чисел,
+"четное трехзначное число" для четных трехзначных чисел,
+"нечетное трехзначное число" для нечетных трехзначных чисел,
+и так далее.
+Параметры:
+
+n: целое число в диапазоне 1–999.
+
+function describeNumber(n) {
+  if (n >= 1 && n <= 999) {
+    if (n % 2 === 0) {
+      if (n >= 10 && n <= 99) {
+        return "четное двузначное число";
+      } else if (n >= 100 && n <= 999) {
+        return "четное трехзначное число";
+      }
+    } else {
+      if (n >= 10 && n <= 99) {
+        return "нечетное двузначное число";
+      } else if (n >= 100 && n <= 999) {
+        return "нечетное трехзначное число";
+      }
+    }
+  }
+  return "Число не соответствует условиям";
+}
+
+
+
+Задача 7
+Для данного целого числа dayNumber в диапазоне 1–7, используя конструкцию switch-case, напиши функцию getDayName(), которая возвращает строку — название дня недели, соответствующее данному числу. В качестве значения default укажите "Invalid day number."
+
+Параметры:
+
+dayNumber: целое число в диапазоне 1–7.
+Пример использования
+
+function getDayName(dayNumber) {
+  switch (dayNumber) {
+    case 1:
+      return "Понедельник";
+    case 2:
+      return "Вторник";
+    case 3:
+      return "Среда";
+    case 4:
+      return "Четверг";
+    case 5:
+      return "Пятница";
+    case 6:
+      return "Суббота";
+    case 7:
+      return "Воскресенье";
+    default:
+      return "Invalid day number.";
+  }
+}
+
+
+
+Задача 8
+Для данного номера единицы длины unitNumber (1 — дециметр, 2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр.) и длины отрезка в этих единицах lengthInUnits (вещественное число), используя конструкцию switch-case, напиши функцию convertToMeters(), которая возвращает длину отрезка в метрах.
+
+Параметры:
+
+unitNumber: целое число в диапазоне 1–5.
+lengthInUnits: вещественное число, длина отрезка в выбранных единицах.
+
+function convertToMeters(unitNumber, lengthInUnits) {
+  let lengthInMeters;
+  
+  switch (unitNumber) {
+    case 1: // Дециметры
+      lengthInMeters = lengthInUnits * 0.1;
+      break;
+    case 2: // Километры
+      lengthInMeters = lengthInUnits * 1000;
+      break;
+    case 3: // Метры
+      lengthInMeters = lengthInUnits;
+      break;
+    case 4: // Миллиметры
+      lengthInMeters = lengthInUnits * 0.001;
+      break;
+    case 5: // Сантиметры
+      lengthInMeters = lengthInUnits * 0.01;
+      break;
+    default:
+      return "Invalid unit number";
+  }
+
+  return lengthInMeters;
+}
+
+
+
+Задача 9
+Для данного возраста age (целое число в диапазоне 20–69), используя конструкцию switch-case, напиши функцию describeAge(), которая возвращает строку-описание указанного возраста с правильным согласованием числа со словом "год".
+
+Параметры:
+
+age: целое число в диапазоне 20–69.
+
+function describeAge(age) {
+  let description;
+  
+  if (age >= 20 && age <= 69) {
+    switch (age % 10) {
+      case 1:
+        description = `${age} год`;
+        break;
+      case 2:
+      case 3:
+      case 4:
+        description = `${age} года`;
+        break;
+      default:
+        description = `${age} лет`;
+    }
+  } else {
+    description = "Invalid age";
+  }
+
+  return description;
+}
+
+
+
+Задача 10
+Для данного числа number (целое число в диапазоне 100–999), используя конструкцию switch-case, напиши функцию describeNumber2(), которая возвращает строку-описание указанного числа.
+
+Параметры:
+
+number: целое число в диапазоне 100–999.
+
+function describeNumber2(number) {
+  let description;
+
+  if (number >= 100 && number <= 999) {
+    const hundreds = Math.floor(number / 100);
+    const tensAndOnes = number % 100;
+    const lastDigit = tensAndOnes % 10;
+
+    switch (hundreds) {
+      case 1:
+        description = "сто";
+        break;
+      case 2:
+        description = "двести";
+        break;
+      case 3:
+        description = "триста";
+        break;
+      default:
+        description = "Invalid number";
+        return description;
+    }
+
+    if (tensAndOnes > 0) {
+      switch (tensAndOnes) {
+        case 11:
+          description += " одиннадцать";
+          break;
+        case 12:
+          description += " двенадцать";
+          break;
+        case 13:
+          description += " тринадцать";
+          break;
+        case 14:
+          description += " четырнадцать";
+          break;
+        case 15:
+          description += " пятнадцать";
+          break;
+        case 16:
+          description += " шестнадцать";
+          break;
+        case 17:
+          description += " семнадцать";
+          break;
+        case 18:
+          description += " восемнадцать";
+          break;
+        case 19:
+          description += " девятнадцать";
+          break;
+        default:
+          switch (tensAndOnes / 10) {
+            case 2:
+              description += " двадцать";
+              break;
+            case 3:
+              description += " тридцать";
+              break;
+            case 4:
+              description += " сорок";
+              break;
+            case 5:
+              description += " пятьдесят";
+              break;
+            case 6:
+              description += " шестьдесят";
+              break;
+            case 7:
+              description += " семьдесят";
+              break;
+            case 8:
+              description += " восемьдесят";
+              break;
+            case 9:
+              description += " девяносто";
+              break;
+            default:
+              description += " Invalid number";
+              break;
+          }
+
+          if (lastDigit > 0) {
+            switch (lastDigit) {
+              case 1:
+                description += " один";
+                break;
+              case 2:
+                description += " два";
+                break;
+              case 3:
+                description += " три";
+                break;
+              case 4:
+                description += " четыре";
+                break;
+              case 5:
+                description += " пять";
+                break;
+              case 6:
+                description += " шесть";
+                break;
+              case 7:
+                description += " семь";
+                break;
+              case 8:
+                description += " восемь";
+                break;
+              case 9:
+                description += " девять";
+                break;
+            }
+          }
+        }
+      }
+    }
+  } else {
+    description = "Invalid number";
+  }
+
+  return description;
+}
+
+
+
+ГРУППЫ ЦЫКЛЫ!!!
+Задача 1
+Для двух целых чисел A и B (где A < B), напиши функцию sumOfSquares(), используя цикл for. Функция должна вернуть сумму квадратов всех целых чисел от A до B включительно.
+
+Параметры:
+
+A: целое число.
+B: целое число, больше A.
+
+function sumOfSquares(A, B) {
+  if (A >= B) {
+    return "A должно быть меньше B";
+  }
+
+  let sum = 0;
+  for (let i = A; i <= B; i++) {
+    sum += i * i;
+  }
+
+  return sum;
+}
+
+
+
+Задача 2
+Для числа A и целого числа N (где N > 0), напиши функцию power(), используя цикл for. Функция должна вернуть результат возведения числа A в степень N.
+
+Параметры:
+
+A: целое число.
+N: целое число, больше 0.
+
+function power(A, N) {
+  if (N <= 0) {
+    return "N должно быть больше 0";
+  }
+
+  let result = 1;
+  for (let i = 0; i < N; i++) {
+    result *= A;
+  }
+
+  return result;
+}
+
+
+
+Задача 3
+Для целого числа N (где N > 0), напиши функцию factorialProduct(), используя цикл for. Функция должна вернуть произведение N! = 1 * 2 * ... * N в виде вещественного числа.
+
+Параметры:
+
+N: целое число, больше 0.
+
+function factorialProduct(N) {
+  if (N <= 0) {
+    return "N должно быть больше 0";
+  }
+
+  let result = 1;
+  for (let i = 1; i <= N; i++) {
+    result *= i;
+  }
+
+  return result;
+}
+
+
+
+Задача 4
+Для целого числа N (где N > 1), напиши функцию fibonacciSequence(), используя цикл for. Функция должна выводить элемент последовательности чисел Фибоначчи под номером N.
+
+Параметры:
+
+N: целое число, больше 1.
+
+function fibonacciSequence(N) {
+  if (N <= 1) {
+    return "N должно быть больше 1";
+  }
+
+  let prev1 = 0;
+  let prev2 = 1;
+  let result = 0;
+
+  for (let i = 2; i <= N; i++) {
+    result = prev1 + prev2;
+    prev1 = prev2;
+    prev2 = result;
+  }
+
+  return result;
+}
+
+
+
+Задача 5
+Для целого числа N (где N > 0), напиши функцию sumOfPowers(), используя цикл for. Функция должна находить сумму выражения 1^1 + 2^2 + ... + N^N.
+
+Параметры:
+
+N: целое число, больше 0.
+
+function sumOfPowers(N) {
+  if (N <= 0) {
+    return "N должно быть больше 0";
+  }
+
+  let result = 0;
+  for (let i = 1; i <= N; i++) {
+    result += Math.pow(i, i);
+  }
+
+  return result;
+}
+
+
+
+Задача 6
+Для положительных чисел A и B (где A > B), напиши функцию remainingLength(), используя цикл while. Функция должна находить длину незанятой части отрезка A, на котором размещено максимально возможное количество отрезков длины B (без наложений).
+
+Параметры:
+
+A: положительное число.
+B: положительное число, меньшее A.
+
+function remainingLength(A, B) {
+  if (A <= 0 || B <= 0 || A <= B) {
+    return "A и B должны быть положительными числами, и B должно быть меньше A.";
+  }
+
+  let count = 0;
+  while (A >= B) {
+    A -= B;
+    count++;
+  }
+
+  return A;
+}
+
+
+
+Задача 7
+Для целого числа N (где N > 0), являющегося некоторой степенью числа 2 (N = 2^K), напиши функцию findExponent(), используя цикл while. Функция должна найти целое число K — показатель этой степени.
+
+Параметры:
+
+N: целое число, являющееся степенью числа 2.
+
+function findExponent(N) {
+  if (N <= 0 || (N & (N - 1)) !== 0) {
+    return "N должно быть положительным и являться степенью числа 2.";
+  }
+
+  let K = 0;
+  while (N > 1) {
+    N = N / 2;
+    K++;
+  }
+
+  return K;
+}
+
+
+
+Задача 8
+Для целого числа N (где N > 1), найди наименьшее целое число K, для которого выполняется условие: сумма чисел от 1 до K (включительно) будет больше или равна N. Напиши функцию findMinKAndSum(), используя цикл while.
+
+Параметры:
+
+N: целое число.
+
+function findMinKAndSum(N) {
+  if (N <= 0) {
+    return "N должно быть положительным числом.";
+  }
+
+  let K = 1;
+  let sum = 0;
+  while (sum < N) {
+    sum += K;
+    K++;
+  }
+
+  return K - 1;
+}
+
+
+
+Задача 9
+Даны целые положительные числа A и B. Найти их наибольший общий делитель (НОД), используя алгоритм Евклида и цикл while. Напиши функцию calculateGCD().
+
+Параметры:
+
+A, B: целые положительные числа.
+
+function calculateGCD(A, B) {
+  while (B !== 0) {
+    const remainder = A % B;
+    A = B;
+    B = remainder;
+  }
+  return A;
+}
+
+
+
+Задача 10
+Дано целое число N (> 1), являющееся числом Фибоначчи. Найти целое число K — порядковый номер числа Фибоначчи N. Напиши функцию findFibonacciIndex(). Нумерация элементов чисел Фибоначчи начинается с первой единицы.
+
+Параметры:
+
+N: целое число, являющееся числом Фибоначчи.
+
+function findFibonacciIndex(N) {
+  let a = 1;
+  let b = 1;
+  let index = 2;
+
+  while (b !== N) {
+    const nextFibonacci = a + b;
+    a = b;
+    b = nextFibonacci;
+    index++;
+  }
+
+  return index;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
