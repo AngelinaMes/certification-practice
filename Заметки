@@ -1,0 +1,38 @@
+1. Проверяем ssh ключ:
+ssh -T git@github.com (если поздоровались то все ок)
+	-Если ssh не работает:
+	 ssh-keygen -t rsa -b 4096
+2. Генерируем shh ключ:
+cat .shh/id_rsa.pub (сгенерировали shh ключ, копируем его. В GitHub вставляем его в SHH and GPG keys)
+3. Копируем SSH не HTTPS
+4. Возвращаемся в terminal:
+	git clone и скопированный SSH
+	ls 
+	cd и выбранную папку
+	ls
+	cat Makefile
+	make install
+
+	ls
+	code index.js
+5. Создаем 5 пустышек функций как в задании:
+	const getSum = () => {};
+
+	function getSmallestNumber() {};
+
+	…
+6. Проверяем линтер:
+	make lint
+	make lint-fix
+	make lint
+	make test (проверяем сам тест)
+7. Не забываем экспортировать функции:
+	export { название функции }
+8. Решаем задачу:
+9. Пушим задачу:
+	git add -A
+	git commit -m “”
+	git push
+
+
+	
