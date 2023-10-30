@@ -35,4 +35,6 @@ cat .shh/id_rsa.pub (сгенерировали shh ключ, копируем �
 	git push
 
 
+
+Вместо make file можно проверить npm run lint/npm run lint:fix
 	
